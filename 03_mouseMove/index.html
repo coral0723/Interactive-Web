@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      background-color: aqua;
+      height: 300vh;
+    }
+    .box{
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.5s ease-in-out ; /* 속성, 지속시간, 타이밍 함수 */
+    }
+    .box img {
+      width: 100px;
+    }
+    button {
+      padding: 40px 100px;
+      background-color: black;
+      color: white;
+      font-size: 30px;
+      transition: all 0.5s ease-in-out  ; /* 속성, 지속시간, 타이밍 함수 */
+    }
+    button:hover {
+      padding: 45px 120px;
+      background-color: purple;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>text</h1>
+  <div class="box">
+    <img src="./butterfly.gif" alt="나비"/>
+  </div>
+  <button>
+    버튼
+  </button>
+</body>
+
+<script>
+  const h1 = document.querySelector('h1');
+  const box = document.querySelector('.box');
+  const button = document.querySelector('button');
+
+  button.addEventListener("mouseenter", () => {
+
+  })
+
+  let x = 0;
+  let y = 0;
+  let targetX = 0;
+  let targetY = 0;
+  let speed = 0.03;
+
+  window.addEventListener("click", (e) => {
+    //pageY는 페이지 전체 기준 좌표
+    //clientY는 뷰포트 기준 좌표
+    x = e.pageX;
+    y = e.pageY;
+    h1.innerText = `x: ${e.pageX} y: ${e.pageY}`;
+
+    box.style.left = x + "px";
+    box.style.top = y + "px";
+    
+  });
+
+  // 마우스 커서의 움직임을 자연스럽게 따라오는 코드
+  // const loop = () => {
+
+  //   targetX += (x - targetX) * speed;
+  //   targetY += (y - targetY) * speed;
+
+  //   box.style.left = targetX + "px";
+  //   box.style.top = targetY + "px";
+  //   브라우저의 새로고침 주기에 맞춰 부드러운 애니메이션을 구현하는데 권장되는 함수
+  //   window.requestAnimationFrame(loop);
+  // }
+
+  loop();
+</script>
+</html>
