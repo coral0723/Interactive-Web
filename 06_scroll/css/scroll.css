@@ -1,0 +1,81 @@
+body {
+  background: linear-gradient(
+    150deg, 
+    #13f0cf, 
+    #ddf311,
+    #2d9c9a,
+    #220340,
+    #220340,
+    black
+  );
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+.depthWrap {
+  position: fixed;
+  bottom: 40px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+  width: 100%;
+  border-bottom: 2px dashed white;
+  padding-bottom: 10px;
+}
+.depthWrap span {
+  width: 80px;
+  display: inline-block;
+}
+.innerWrap {
+  position: relative;
+  padding: 40px;
+  z-index: 100;
+}
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 150px;
+}
+.textWrap {
+  padding: 500px 20px;
+}
+.textWrap p {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+.textWrap img {
+  width: 100%;
+}
+.progressWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: black;
+}
+.bar {
+  width: 0%;
+  height: inherit;
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  transition: width .2s ease; /* 속성, 지속시간, 타이밍 함수 */
+}
+.submarine {
+  position: fixed;
+  z-index: 200;
+  width: 150px;
+  top: 20%;
+  transition: all 0.3s ease-out; /* 속성, 지속시간, 타이밍 함수 */
+}
+.octopus {
+  z-index: 1;
+  position: fixed;
+  bottom: -200px;
+  right: 0;
+  width: 300px;
+  opacity: 0.4;
+}
